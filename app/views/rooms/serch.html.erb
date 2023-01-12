@@ -1,0 +1,55 @@
+<html><head>
+    <title>ログイン済み</title>
+    <meta name="csrf-param" content="authenticity_token">
+<meta name="csrf-token" content="AYhdC2x1x3LOLxi+EsSuEySDB2cTzOSGcqSfGTtfB+6k+Kyw8tW59zhf9Mya83ky32Fm2jMnHmbEtOsIcC+x4g==">
+
+  </head>
+
+  <body>
+    <header class="header">
+
+        <a href="/"><img alt="サイトのロゴ画像" src="https://presite-potepancamp-rails-02.herokuapp.com/assets/logo.png"></a>
+
+ <a class="btn btn-primary my-2 mx-3" href="/users/sign_in">ログイン</a>
+<a class="btn btn-secondary" href="/users/sign_up">登録する</a>
+</header>
+
+
+<script>
+  $(function() {
+    $('.nav-trigger').click(function() {
+          $('.header-nav-menu').toggle(1500);
+      })
+  });
+</script>
+
+  <p class="form-area-title mb-4">Potepan Shareでまだ体験したことのない旅をしよう</p>
+
+
+<%= search_form_for  @q, url: rooms_home_path do |f| %>
+ <%= f.label :address_cont, '場所の検索' %>
+  <%= f.search_field :address_cont %>
+  <%= f.submit '検索', class: "btn" %>
+<%end%>
+            <h1 class="section-title">おすすめのエリア</h1>
+
+                    <span>東京</span>
+                    <a href="https://presite-potepancamp-rails-02.herokuapp.com/rooms/search?area=%E6%9D%B1%E4%BA%AC"><img class="panel-image" src="https://presite-potepancamp-rails-02.herokuapp.com/assets/img_tokyo.jpg"></a>
+
+
+
+                    <span>大阪</span>
+                    <a href="https://presite-potepancamp-rails-02.herokuapp.com/rooms/search?area=%E5%A4%A7%E9%98%AA"><img class="panel-image" src="https://presite-potepancamp-rails-02.herokuapp.com/assets/img_osaka.jpg"></a>
+
+
+                    <span>京都</span>
+                    <a href="https://presite-potepancamp-rails-02.herokuapp.com/rooms/search?area=%E4%BA%AC%E9%83%BD"><img class="panel-image shadow" src="https://presite-potepancamp-rails-02.herokuapp.com/assets/img_kyoto.jpg"></a>
+
+                    <span>札幌</span>
+                    <a href="https://presite-potepancamp-rails-02.herokuapp.com/rooms/search?area=%E6%9C%AD%E5%B9%8C"><img class="panel-image" src="https://presite-potepancamp-rails-02.herokuapp.com/assets/img_sapporo.jpg"></a>
+                    <div class="shadow">
+    <footer class="footer">
+    <p>© 2020 POTEPAN.INC.</p>
+</footer>
+
+</body></html>
