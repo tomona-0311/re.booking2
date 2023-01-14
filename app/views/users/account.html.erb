@@ -1,0 +1,42 @@
+<div class="container-fiuld user">
+    <div class="row">
+
+
+        <div class="col-lg-2 user-nav user-nav-mobile d-lg-none">
+            <ul>
+                <li class="active">
+                    <%= link_to "プロフィール",users_profile_path %>
+                </li>
+            </ul>
+        </div>
+
+
+                <%= form_with model: @user, url: users_path,  class: 'new_user', local: true do |f| %>
+
+                <div class="update-content">
+                    <div class="row">
+                        <%= f.label :メールアドレス,class:"col-md-3" %><br />
+                        <div class="col-md-9"><%= @user.email %></div>
+
+                    </div>
+                </div>
+
+                <div class="update-content">
+                    <div class="row">
+                        <%= f.label :パスワード,class:"col-md-3" %><br />
+                        <div class="col-md-9">********</div>
+                    </div>
+                </div>
+
+                <div class="update-content"></div>
+                    <div class="row">
+                        <%= link_to "編集", users_profile_path,class:"col-md-2 btn btn-primary mx-3"%>
+                    </div>
+                </div>
+
+                <% end %>
+
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,44 @@
+<div class="top">
+    <div class="top-main">
+        <div class="container">
+            <div class="row col-lg-6">
+                <div class="form-fream">
+                    <div class="form-area">
+                        <p class="form-area-title mb-4">Potepan Shareでまだ体験したことない旅をしよう</p>
+                        <a class="btn btn-secondary" href="/users/sign_up">アカウント登録する</a>
+                        <a class="btn btn-secondary" href="/users/sign_in">ログインする</a>
+                        <%= search_form_for  @q, url: rooms_home_path do |f| %>
+ <%= f.label :address_cont, '場所の検索' %>
+  <%= f.search_field :address_cont %>
+  <%= f.submit '検索', class: "btn" %>
+<%end%>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="sutart">
+        <div class="panel-area m-5">
+            <h1 class="section-title">おすすめのエリア</h1>
+
+            <div class="row03">
+
+                     <span>東京</span>
+                   <%= image_tag"https://rails-02-sample.herokuapp.com/assets/home/recommend-area/tokyo.jpg" , size: "200x350"%>
+
+                    <span>大阪</span>
+                    <%=  image_tag"https://rails-02-sample.herokuapp.com/assets/home/recommend-area/osaka.jpg" , size: "200x350" %>
+
+                    <span>京都</span>
+                    <%=  image_tag"https://rails-02-sample.herokuapp.com/assets/home/recommend-area/kyoto.jpg" , size: "200x350" %>
+
+                    <span>札幌</span>
+                <%=  image_tag"https://rails-02-sample.herokuapp.com/assets/home/recommend-area/sapporo.jpg" , size: "200x350" %>
+
+
+            </div>
+        </div>
+
+    </div>
+    </div>

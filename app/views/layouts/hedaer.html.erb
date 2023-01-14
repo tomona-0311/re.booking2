@@ -1,0 +1,16 @@
+<ul class="g_navi">
+<li><a href = "#"></li>
+<li><% if @user.image.attached? %>
+         <%= image_tag @user.image,class:"icon-image host-icon" ,size: "30x25" %>
+         <% else %>
+         <img src="https://presite-potepancamp-rails-02.herokuapp.com/assets/default_icon-9263fc59c414b7228d256fc178dcb22183561357950a68f5ad086ba7ee054974.jpg"  alt='アイコン画像' class="icon-image host-icon" width="10" height="10" >
+        <% end %></li></a>
+<ul class="list_navi">
+<li class="list_navi"><a href = "rooms/new">ルーム登録</a></li>
+<li class="list_navi"><a href = "rooms/index">予約済みルーム一覧</a></li>
+<li class="list_navi"><a href = "reservations/index">登録済みルーム一覧</a></li>
+<li class="list_navi"><a href = "users/account">設定</a></li>
+<li class="list_navi"><a href = "pages/home">ログアウト</a></li>
+</ul>
+</li>
+</ul>

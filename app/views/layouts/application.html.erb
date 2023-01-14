@@ -1,16 +1,48 @@
 <!DOCTYPE html>
 <html>
+
+
+
   <head>
-    <title>ReBooking</title>
+    <title>Booking</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-    <%= javascript_importmap_tags %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
+  <header>
+  <div class =color>
 
+   <a href="/users/login"><img alt="サイトのロゴ画像" src=https://rails-02-sample.herokuapp.com/assets/common/logo.png width="25%" height="70%"></a>
+
+</div>
+  <ul class = "head">
+  <li><a href = "/users/login">
+<% if @user.image.attached? %>
+         <%= image_tag @user.image,class:"icon-image host-icon" ,size: "50x50" %>
+         <% else %>
+         <img src="https://rails-02-sample.herokuapp.com/assets/common/default-avatar-7a6cbfd7993e89f24bfc888f4a035a83c6f1428b8bdc47eed9095f2799a40153.png"  alt='アイコン画像' class="icon-image host-icon" width="120" height="120" >
+        <% end %></li></a>
+        <%= @user.name %>
+<ul class="list_navi">
+<li class="menu_li"><%= link_to "ルーム登録", rooms_new_path %></li>
+<li class="menu_li"><%= link_to "予約済みルーム一覧", reservations_path %></li>
+<li class="menu_li"><%= link_to "登録済みルーム一覧",rooms_path%></li>
+<li class="menu_li"><%= link_to "設定", users_account_path %></li>
+<li class="menu_li"><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
+
+</ul>
+</li>
+</ul>
+
+</header>
   <body>
     <%= yield %>
   </body>
+  <br>
+  <footer>
+  2023.予約サイト
+  </footer>
 </html>

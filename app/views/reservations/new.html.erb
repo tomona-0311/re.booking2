@@ -1,0 +1,24 @@
+ <h4 class="reservations-new-check-content">予約内容確認</h4>
+  <%= form_with   model: [ @room,@reservation],  local: true do |f| %>
+                        <%= f.hidden_field :people %>
+                        <%= f.hidden_field :room_id %>
+                        <%= f.hidden_field :user_id %>
+                         <h5 class="price-icon"><%= @room.price %> / 日 </h5><!--rooms/newで作成したprice 表示されている-->
+                         <h6 class="reservations-new-check-content">人数 : <%= @reservation.people %> 人</h6><!-- @reservationの中からroomモデルのpeopleを出力-->
+                         <h6 class="reservations-new-check-content">使用日数 <%=f.text_field :total_day , value:@reservation.total_day =(@reservation.end_date - @reservation.start_date ).to_i %>  日</h6>
+                            <%= f.label :start_date ,"開始日" %><br>
+                            <%= f.hidden_field :start_date %>
+                            <%= @reservation.start_date %><br>
+
+                            <%= f.label :end_date ,"終了日" %><br>
+                            <%= f.hidden_field :end_date %>
+                           <%= @reservation.end_date %><br>
+
+
+                           <%= f.label :total_price ,"合計金額" %><br>
+                               <%= f.text_field :total_price, value: @reservation.total_price = @room.price  *  @reservation.people   * (@reservation.end_date - @reservation.start_date ).to_i %>
+                            <p class="reservations-new-check-content">上記内容でよろしければ「予約を確定」を押してください</p>
+                            <%= f.submit "予約を確定" ,class:"col-md-2 btn btn-primary my-3 form-control form-btn"%>
+                            <%= link_to "ルーム詳細に戻る",:back ,class:"btn btn-secondary form-control"%>
+                             <% end %>
+
